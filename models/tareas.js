@@ -1,4 +1,13 @@
-const { DataTypes } = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
+
+const sequelize = new Sequelize('db_habitask', 'admin', 'passAWSbd', {
+  host: 'database-habitask.c1uw4wgcq9bw.us-east-1.rds.amazonaws.com',
+  dialect: 'mysql',
+  define: {
+    timestamps: false, // Desactivar las marcas de tiempo globalmente
+  },
+});
+
 
 const Tarea = sequelize.define('Tarea', {
   id: {
